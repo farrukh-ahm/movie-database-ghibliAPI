@@ -1,16 +1,26 @@
 const API_URL = "https://ghibliapi.herokuapp.com";
 
-let connectionCheck = document.getElementById("status");
+const databaseCheck = document.getElementsByClassName("search-button");
+const display = document.getElementById("display");
 
-connectionCheck.addEventListener("click", e=>statusCheck(e));
+
+for(let button of databaseCheck){
+    button.addEventListener("click", e=>statusCheck(e));
+    // button.addEventListener("click", ()=>{
+    //     let type = button.getAttribute("data-cat");
+    //     console.log(type)
+    // })
+}
+
 
 async function statusCheck(e){
-    const response = await fetch(`${API_URL}/films`);
+    let field = e.target.getAttribute("data-cat")
+    const response = await fetch(`${API_URL}/${field}`);
     const data = await response.json();
     if(response.ok){
         console.log(data)
         let movies = data.map(x=>x.title);
-        console.log(movies)
+        display.innerText = movies;
     }
     else{
         console.log("error");
