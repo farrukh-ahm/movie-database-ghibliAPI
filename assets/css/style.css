@@ -4,8 +4,42 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 #display {
     height: 500px;
     width: 500px;
     border: 1px solid black;
+    margin: auto;
+}
+
+#button-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    width: 50%;
+    height: 10rem;
+    border: 1px solid black;
+    margin: auto;
+    padding: 1rem;
+}
+
+.search-button{
+    height: 4em;
+    width: 10em;
+    margin: auto;
+    font-size: 100%;
+    letter-spacing: 2px;
+}
+
+.search-button:nth-child(4){
+    grid-column: 1/2;
+}
+.search-button:nth-child(5){
+    grid-column: 3/3;
 }
