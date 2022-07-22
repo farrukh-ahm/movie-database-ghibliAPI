@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;500;600;700&family=Dancing+Script&family=Edu+NSW+ACT+Foundation&family=Montserrat:wght@200&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +11,7 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
+    background-color: #F9E6F5;
 }
 
 #display-container{
@@ -31,23 +34,58 @@ body{
 }
 
 .cards{
-    height: 80%;
+    height: 90%;
     width: 90%;
     margin: auto;
+    border-radius: 10px;
 }
 
-.cards:nth-child(1){
-    background-color: aqua;
+.cards > h2{
+    font-family: 'Cormorant SC', serif;
+    text-align: center;
+    padding: 0.5em 0;
+
 }
-.cards:nth-child(2){
-    background-color: hotpink;
+.cards > h3{
+    font-family: 'Cormorant SC', serif;
+    text-align: center;
+    padding-bottom: 0.5em;
+
 }
-.cards:nth-child(3){
+
+.cards> .description{
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    text-align: justify;
+    padding: 0.5em 0.5em;
+    line-height: 1.5em;
+    letter-spacing: initial;
+}
+
+.cards > p{
+    padding-left: 1em;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+strong{
+    /* font-weight: 500; */
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: initial;
+}
+
+.cards:nth-child(even){
+    background-color: rgb(208, 202, 227, 0.5);
+}
+.cards:nth-child(odd){
+    background-color: rgb(251, 244, 215, 0.5);
+}
+/* .cards:nth-child(3){
     background-color: lightcoral;
 }
 .cards:nth-child(4){
     background-color: lightgreen;
-}
+} */
 
 .btn{
     position: absolute;
@@ -58,6 +96,7 @@ body{
     width: 3rem;
     border-radius: 50%;
     cursor: pointer;
+    background-color: #d5cffe;
     /* display: flex;
     justify-content: center;
     text-align: center; */
@@ -77,6 +116,7 @@ body{
 
 .btn > i {
     transform: scale(1.1);
+    color: #ffff;
 }
 
 

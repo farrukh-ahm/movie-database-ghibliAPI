@@ -2,6 +2,8 @@ const API_URL = "https://ghibliapi.herokuapp.com";
 
 const databaseCheck = document.getElementsByClassName("search-button");
 const display = document.getElementById("display");
+let cards;
+let insert;
 
 
 for(let button of databaseCheck){
@@ -18,9 +20,11 @@ async function statusCheck(e){
     const response = await fetch(`${API_URL}/${field}`);
     const data = await response.json();
     if(response.ok){
-        console.log(data)
-        let movies = data.map(x=>x.title);
-        display.innerText = movies;
+        if(field === "films"){
+            getFilms(data);
+            // let x = data.map(y=>y.title)
+            // console.log(x)
+        }
     }
     else{
         console.log("error");
@@ -28,6 +32,23 @@ async function statusCheck(e){
 
 }
 
+
+//GET FILMS LIST
+
+function getFilms(data){
+    for(let i of data){
+        insert = `<div class='cards'>` 
+        insert += `<h2>Title: ${i.title}</h2>`;
+        insert += `<h3>Original Title: ${i.original_title}</h3>`
+        insert += `<p class='description'>Description: ${i.description}</p>`
+        insert += `<p>Director: ${i.director}</p>`
+        insert += `<p>Producer: ${i.producer}</p>`
+        insert += `<p>Release Date: ${i.release_date}</p>`
+        insert += `<p>Running Time: ${i.running_time}</p>`
+        insert += `</div>`
+        display.insertAdjacentHTML('beforeend', insert)   
+    }
+}
 
 
 // SCROLL BUTTONS
