@@ -27,3 +27,19 @@ async function statusCheck(e){
     }
 
 }
+
+let scroll = document.getElementsByClassName("btn");
+for(let button of scroll){
+    button.addEventListener("click", e=>{
+        let direction = e.target.getAttribute("data-scroll");
+        // let direction = this.getAttribute("data-scroll");
+        if(direction === "next"){
+            display.scrollLeft += 500;
+            console.log("right")
+        }
+        else{
+            console.log("left")
+            display.scrollLeft -= 500;
+        }
+    })
+}

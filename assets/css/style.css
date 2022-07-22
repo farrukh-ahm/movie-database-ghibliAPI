@@ -11,11 +11,42 @@ body{
     gap: 2rem;
 }
 
+#display-container{
+    height: 500px;
+    width: 500px;
+    position: relative;
+    margin: auto;
+}
+
 #display {
     height: 500px;
     width: 500px;
     border: 1px solid black;
     margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.cards{
+    height: 80%;
+    width: 90%;
+    margin: auto;
+}
+
+.cards:nth-child(1){
+    background-color: aqua;
+}
+.cards:nth-child(2){
+    background-color: hotpink;
+}
+.cards:nth-child(3){
+    background-color: lightcoral;
+}
+.cards:nth-child(4){
+    background-color: lightgreen;
 }
 
 #button-container{
@@ -42,4 +73,18 @@ body{
 }
 .search-button:nth-child(5){
     grid-column: 3/3;
+}
+
+.btn{
+    position: absolute;
+}
+
+#next {
+    top: 50%;
+    right: -10%;
+}
+
+#previous{
+    top: 50%;
+    left: -20%;
 }

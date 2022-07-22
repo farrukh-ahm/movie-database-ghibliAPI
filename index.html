@@ -8,7 +8,16 @@
     <title>Movies</title>
 </head>
 <body>
-    <div id="display"></div>
+    <div id="display-container">
+        <div id="display">
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <button class="btn" id="next" data-scroll="next">Next</button>
+            <button class="btn" id="previous" data-scroll="previous">Previous</button>
+        </div>
+    </div>
     <div id="button-container">
         <button id="films" class="search-button" data-cat="films">Films</button>
         <button id="people" class="search-button" data-cat="people">People</button>
