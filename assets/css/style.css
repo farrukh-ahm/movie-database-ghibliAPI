@@ -15,14 +15,14 @@ body{
     height: 500px;
     width: 500px;
     position: relative;
-    margin: auto;
+    margin: 5rem auto;
 }
 
 #display {
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
     border: 1px solid black;
-    margin: auto;
+    /* margin: 5rem auto; */
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 100%;
@@ -48,6 +48,39 @@ body{
 .cards:nth-child(4){
     background-color: lightgreen;
 }
+
+.btn{
+    position: absolute;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    /* display: flex;
+    justify-content: center;
+    text-align: center; */
+}
+
+#next {
+    top: 50%;
+    right: -20%;
+    transform: translate(-50%, -50%);
+}
+
+#previous{
+    top: 50%;
+    left: -20%;
+    transform: translate(50%, -50%);
+}
+
+.btn > i {
+    transform: scale(1.1);
+}
+
+
+/*----------------------------------- SEARCH BUTTONS ------------------------------ */
 
 #button-container{
     display: grid;
@@ -75,16 +108,3 @@ body{
     grid-column: 3/3;
 }
 
-.btn{
-    position: absolute;
-}
-
-#next {
-    top: 50%;
-    right: -10%;
-}
-
-#previous{
-    top: 50%;
-    left: -20%;
-}

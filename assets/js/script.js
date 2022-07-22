@@ -28,6 +28,9 @@ async function statusCheck(e){
 
 }
 
+
+
+// SCROLL BUTTONS
 let scroll = document.getElementsByClassName("btn");
 for(let button of scroll){
     button.addEventListener("click", e=>{
