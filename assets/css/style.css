@@ -24,13 +24,20 @@ body{
 #display {
     height: 100%;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #d5cffe;
+    border-radius: 10px;
     /* margin: 5rem auto; */
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 1.5rem;
+}
+
+#display > *{
+    scroll-snap-align: start;
 }
 
 .cards{
@@ -75,17 +82,11 @@ strong{
 }
 
 .cards:nth-child(even){
-    background-color: rgb(208, 202, 227, 0.5);
+    background-color: rgb(208, 202, 227, 0.4);
 }
 .cards:nth-child(odd){
-    background-color: rgb(251, 244, 215, 0.5);
+    background-color: rgb(251, 244, 215, 0.3);
 }
-/* .cards:nth-child(3){
-    background-color: lightcoral;
-}
-.cards:nth-child(4){
-    background-color: lightgreen;
-} */
 
 .btn{
     position: absolute;
@@ -97,9 +98,13 @@ strong{
     border-radius: 50%;
     cursor: pointer;
     background-color: #d5cffe;
-    /* display: flex;
-    justify-content: center;
-    text-align: center; */
+    transition: all 0.5s linear;
+}
+
+.btn:hover{
+    background-color: #a295f7;
+    outline: 1px solid #a295f7;
+    outline-offset: 4px;
 }
 
 #next {
@@ -148,3 +153,17 @@ strong{
     grid-column: 3/3;
 }
 
+
+
+
+
+
+
+/* .snaps-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(2rem, 1rem);
+  }
+
+  .snaps-inline > * {
+    scroll-snap-align: start;
+  } */
