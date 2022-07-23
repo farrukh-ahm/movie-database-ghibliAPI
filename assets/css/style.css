@@ -15,8 +15,8 @@ body{
 }
 
 #display-container{
-    height: 500px;
-    width: 500px;
+    height: 43.75rem;
+    width: 37.5rem;
     position: relative;
     margin: 5rem auto;
 }
@@ -41,16 +41,21 @@ body{
 }
 
 .cards{
-    height: 90%;
+    height: 95%;
     width: 90%;
     margin: auto;
     border-radius: 10px;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    gap: 0.5em;
+    /* position: relative; */
 }
 
 .cards > h2{
     font-family: 'Cormorant SC', serif;
     text-align: center;
-    padding: 0.5em 0;
+    padding: 0.25em 0 0.5em;
 
 }
 .cards > h3{
@@ -74,6 +79,27 @@ body{
     letter-spacing: 0.05em;
     font-family: 'Edu NSW ACT Foundation', cursive;
 }
+
+.image{
+    max-height: 13em;
+    max-width: 25em;
+    /* object-fit: contain; */
+    margin: 0 auto;
+    padding: 1.5em 0 0;
+    /* border-radius: 20px; */
+    opacity: 0.8;
+    /* outline: 1px solid #d5cffe;
+    outline-offset: 2px; */
+    /* position: absolute;
+    left: 50%;
+    top: 1em;
+    transform: translateX(-50%); */
+
+}
+
+/* .image>img{
+    object-fit: contain;
+} */
 
 strong{
     /* font-weight: 500; */

@@ -25,6 +25,10 @@ async function statusCheck(e){
             // let x = data.map(y=>y.title)
             // console.log(x)
         }
+
+        else if(field === "people"){
+            getPeople(data);
+        }
     }
     else{
         console.log("error");
@@ -37,7 +41,8 @@ async function statusCheck(e){
 
 function getFilms(data){
     for(let i of data){
-        insert = `<div class='cards'>` 
+        insert = `<div class='cards'>`
+        insert += `<img src="${i.image}" class="image">` 
         insert += `<h2>Title: ${i.title}</h2>`;
         insert += `<h3>Original Title: ${i.original_title}</h3>`
         insert += `<p class='description'>Description: ${i.description}</p>`
@@ -48,6 +53,16 @@ function getFilms(data){
         insert += `</div>`
         display.insertAdjacentHTML('beforeend', insert)   
     }
+    // for(let i of data){
+    //     insert = `<img src="${i.image}">`
+    //     display.insertAdjacentHTML('beforeend', insert);
+    // }
+}
+
+
+function getPeople(data){
+    let x = data.map(y=>y.films);
+    console.log(x)
 }
 
 
