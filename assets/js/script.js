@@ -28,6 +28,10 @@ async function statusCheck(e){
 
         else if(field === "people"){
             getPeople(data);
+            // for(let i of data){
+            //     console.log(i)
+                
+            // }
         }
     }
     else{
@@ -40,6 +44,8 @@ async function statusCheck(e){
 //GET FILMS LIST
 
 function getFilms(data){
+    insert = "";
+    display.innerHTML = "";
     for(let i of data){
         insert = `<div class='cards'>`
         insert += `<img src="${i.image}" class="image">` 
@@ -61,9 +67,21 @@ function getFilms(data){
 
 
 function getPeople(data){
-    let x = data.map(y=>y.films);
-    console.log(x)
+    insert = "";
+    display.innerHTML = "";
+    for(let i of data){
+        insert = `<div class='cards'>`;
+        insert += `<h2>Name: ${i.name}</h2>`;
+        insert += `<h3>Gender: ${i.gender}</h3>`;
+        insert += `<p>Age: ${i.age}</p>`;
+        insert += `<p>Eye Color: ${i.eye_color}</p>`;
+        insert += `<p>Hair Color: ${i.hair_color}</p>`;
+        insert += `<p><a href="${i.species}" target="_blank">Check Specie</a></p>`;
+        insert += `<p><a href="${i.films[0]}" target="_blank">Check Films</a></p>`;
+        display.insertAdjacentHTML("beforeend", insert);
+    }
 }
+
 
 
 // SCROLL BUTTONS

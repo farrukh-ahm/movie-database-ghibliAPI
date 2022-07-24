@@ -80,6 +80,11 @@ body{
     font-family: 'Edu NSW ACT Foundation', cursive;
 }
 
+.cards  a {
+    text-decoration: none;
+    color: #00c895;
+}
+
 .image{
     max-height: 13em;
     max-width: 25em;
