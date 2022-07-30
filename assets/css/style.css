@@ -34,6 +34,7 @@ body{
     scroll-behavior: smooth;
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 1.5rem;
+    position: relative;
 }
 
 #display > *{
@@ -49,7 +50,9 @@ body{
     /* justify-content: center; */
     flex-direction: column;
     gap: 0.5em;
+    z-index: 5;
     /* position: relative; */
+    background-color: #eb7210;
 }
 
 .cards > h2{

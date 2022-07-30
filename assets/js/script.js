@@ -33,6 +33,14 @@ async function statusCheck(e){
                 
             // }
         }
+
+        else if(field === "locations"){
+            getLocations(data)
+        }
+        
+        else if(field === "vehicles"){
+            console.log(data)
+        }
     }
     else{
         console.log("error");
@@ -41,7 +49,7 @@ async function statusCheck(e){
 }
 
 
-//GET FILMS LIST
+//DISPLAY FILMS LIST
 
 function getFilms(data){
     insert = "";
@@ -66,10 +74,13 @@ function getFilms(data){
 }
 
 
+//DISPLAY PEOPLE LIST
 function getPeople(data){
     insert = "";
     display.innerHTML = "";
     for(let i of data){
+        // let film = getInfo(i.films[0], title);
+        // let specie = getInfo(i.species, general);
         insert = `<div class='cards'>`;
         insert += `<h2>Name: ${i.name}</h2>`;
         insert += `<h3>Gender: ${i.gender}</h3>`;
@@ -77,11 +88,31 @@ function getPeople(data){
         insert += `<p>Eye Color: ${i.eye_color}</p>`;
         insert += `<p>Hair Color: ${i.hair_color}</p>`;
         insert += `<p><a href="${i.species}" target="_blank">Check Specie</a></p>`;
+        // insert += `<p>Species: ${specie}</p>`
         insert += `<p><a href="${i.films[0]}" target="_blank">Check Films</a></p>`;
+        // insert += `<p>Films featured in: ${film}</p>`
+        insert += `</div>`
         display.insertAdjacentHTML("beforeend", insert);
     }
 }
 
+
+//DISPLAY LOCATIONS
+function getLocations(data){
+    insert = "";
+    display.innerHTML = "";
+    for(let i of data){
+        insert = `<div class='cards'>`;
+        insert += `<h2>Name: ${i.name}</h2>`;
+        insert += `<h3>Terrain: ${i.terrain}</h3>`;
+        insert += `<p>Climate: ${i.climate}</p>`;
+        insert += `<p>Surface Water: ${i.surface_water}</p>`;
+        insert += `<p><a href='${i.films[0]}' target="_blank">Films featured in</a></p>`;
+        insert += `<p><a href='${i.url}' target="_blank">URL</a></p>`;
+        insert += `</div>`
+        display.insertAdjacentHTML("beforeend", insert);
+    }
+}
 
 
 // SCROLL BUTTONS
@@ -100,3 +131,17 @@ for(let button of scroll){
         }
     })
 }
+
+
+// async function getInfo(url, spec){
+//     const responseTwo = await fetch(`${url}`);
+//     const dataTwo = await responseTwo.json();
+//     if(responseTwo.ok){
+//         if(spec === "title"){
+//             return dataTwo.title;
+//         }
+//         else{
+//             return dataTwo.name;
+//         }
+//     } 
+// }
