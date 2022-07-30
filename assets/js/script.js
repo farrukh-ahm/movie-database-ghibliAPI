@@ -4,6 +4,7 @@ const databaseCheck = document.getElementsByClassName("search-button");
 const display = document.getElementById("display");
 let cards;
 let insert;
+let scroll = document.getElementsByClassName("btn");
 
 
 for(let button of databaseCheck){
@@ -21,12 +22,18 @@ async function statusCheck(e){
     const data = await response.json();
     if(response.ok){
         if(field === "films"){
+            for(let button of scroll){
+                button.style.opacity = "0";
+            }
             getFilms(data);
             // let x = data.map(y=>y.title)
             // console.log(x)
         }
 
         else if(field === "people"){
+            for(let button of scroll){
+                button.style.opacity = "0";
+            }    
             getPeople(data);
             // for(let i of data){
             //     console.log(i)
@@ -35,15 +42,25 @@ async function statusCheck(e){
         }
 
         else if(field === "locations"){
+            for(let button of scroll){
+                button.style.opacity = "0";
+            }
             getLocations(data)
         }
         
         else if(field === "species"){
+            for(let button of scroll){
+                button.style.opacity = "0";
+            }
             getSpecies(data)
-            console.log(data)
+            // console.log(data)
             // let x = data.map(y=>y.name)
             // console.log(x)
         }
+        for(let button of scroll){
+        setTimeout(()=>{
+            button.style.opacity = "1";
+        }, 2000)}
     }
     else{
         console.log("error");
@@ -137,7 +154,7 @@ function getSpecies(data){
 
 
 // SCROLL BUTTONS
-let scroll = document.getElementsByClassName("btn");
+// let scroll = document.getElementsByClassName("btn");
 for(let button of scroll){
     button.addEventListener("click", e=>{
         let direction = e.target.getAttribute("data-scroll");
