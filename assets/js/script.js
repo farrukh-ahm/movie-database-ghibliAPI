@@ -38,8 +38,11 @@ async function statusCheck(e){
             getLocations(data)
         }
         
-        else if(field === "vehicles"){
+        else if(field === "species"){
+            getSpecies(data)
             console.log(data)
+            // let x = data.map(y=>y.name)
+            // console.log(x)
         }
     }
     else{
@@ -109,6 +112,24 @@ function getLocations(data){
         insert += `<p>Surface Water: ${i.surface_water}</p>`;
         insert += `<p><a href='${i.films[0]}' target="_blank">Films featured in</a></p>`;
         insert += `<p><a href='${i.url}' target="_blank">URL</a></p>`;
+        insert += `</div>`
+        display.insertAdjacentHTML("beforeend", insert);
+    }
+}
+
+
+// DISPLAY SPECIES
+function getSpecies(data){
+    insert = "";
+    display.innerHTML = "";
+    for(let i of data){
+        insert = `<div class='cards'>`;
+        insert += `<img src="./assets/images/${i.name}.webp" class="image">`
+        insert += `<h2>Name: ${i.name}</h2>`;
+        insert += `<h3>Classification: ${i.classification}</h3>`
+        insert += `<p>Eye Colors: ${i.eye_color}</p>`
+        insert += `<p>Hair Colors: ${i.hair_color}</p>`
+        insert += `<p><a href="${i.url}" target="_blank">More Info</p>`
         insert += `</div>`
         display.insertAdjacentHTML("beforeend", insert);
     }
