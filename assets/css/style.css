@@ -11,7 +11,7 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 0.5rem;
-    background-color: #F9E6F5;
+    background-color: #93CDE6;
 }
 
 :root{
@@ -203,4 +203,12 @@ strong{
 .search-button:hover{
     background-color: #baf7e7;
     border-color: #00c895;
+}
+
+/*--------------------------------------------------------- MEDIA QUERIES ---------------------------------------*/
+
+@media screen and (max-width: 300px){
+    #display{
+        width: 100vw;
+    }
 }
