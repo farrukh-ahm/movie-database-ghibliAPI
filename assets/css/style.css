@@ -54,7 +54,7 @@ body{
     /* justify-content: center; */
     flex-direction: column;
     gap: 0.5em;
-    z-index: 5;
+    /* z-index: 5; */
     /* position: relative; */
 }
 
@@ -136,7 +136,7 @@ strong{
     cursor: pointer;
     background-color: #d5cffe;
     transition: all 0.5s linear;
-    opacity: 0;
+    opacity: 1;
 }
 
 .btn:hover{
@@ -207,8 +207,43 @@ strong{
 
 /*--------------------------------------------------------- MEDIA QUERIES ---------------------------------------*/
 
-@media screen and (max-width: 300px){
-    #display{
+@media screen and (max-width: 400px){
+    #display-container{
         width: 100vw;
+        height: 50rem;
+    }
+
+    .cards{
+        height: 85%;
+    }
+
+    #button-container{
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+        height: 500px;        
+    }
+
+    .search-button:nth-child(4){
+        grid-column: initial;
+    }
+
+    #next {
+        top: 105%;
+        right: 20%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #previous{
+        top: 105%;
+        left: 20%;
+        transform: translate(50%, -50%);
+    }
+
+    .image{
+        max-width: 18.75em;
+    }
+
+    .cards > .description{
+        line-height: 1em;
     }
 }

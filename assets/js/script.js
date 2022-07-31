@@ -144,8 +144,8 @@ function getSpecies(data){
         insert += `<img src="./assets/images/${i.name}.webp" class="image">`
         insert += `<h2>Name: ${i.name}</h2>`;
         insert += `<h3>Classification: ${i.classification}</h3>`
-        insert += `<p>Eye Colors: ${i.eye_color}</p>`
-        insert += `<p>Hair Colors: ${i.hair_color}</p>`
+        insert += `<p>Eye Colors: ${i.eye_colors}</p>`
+        insert += `<p>Hair Colors: ${i.hair_colors}</p>`
         insert += `<p><a href="${i.url}" target="_blank">More Info</p>`
         insert += `</div>`
         display.insertAdjacentHTML("beforeend", insert);
