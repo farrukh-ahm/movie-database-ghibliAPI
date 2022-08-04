@@ -225,12 +225,28 @@ strong{
 }
 
 
-
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     #display-container{
         width: 100vw;
         height: 50rem;
     }
+
+    #next {
+        top: 105%;
+        right: 10%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #previous{
+        top: 105%;
+        left: 10%;
+        transform: translate(50%, -50%);
+    }
+}
+
+
+@media screen and (max-width: 400px){
+   
 
     .cards{
         height: 85%;
